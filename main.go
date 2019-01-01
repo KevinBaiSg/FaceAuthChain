@@ -79,7 +79,8 @@ func InitRecognizerDB() []string {
 		log.Fatal(err)
 	}
 
-	for i, f := range files {
+	index := 0
+	for _, f := range files {
 		fileName := f.Name()
 		ext := filepath.Ext(fileName)
 		if ext != ".jpeg" && ext != ".jpg" {
@@ -94,7 +95,8 @@ func InitRecognizerDB() []string {
 			continue
 		}
 		samples = append(samples, faces[0].Descriptor)
-		cats = append(cats, int32(i))
+		cats = append(cats, int32(index))
+		index ++
 		names = append(names, fileName[0:len(fileName)-len(ext)])
 	}
 	rec.SetSamples(samples, cats)
@@ -121,6 +123,8 @@ func main() {
 		log.Fatalf("Can't init face recognizer: %v", err)
 	}
 	defer rec.Close()
+
+	// TODO: Code refactoring by database
 	userNames = InitRecognizerDB()
 
 	router := mux.NewRouter()

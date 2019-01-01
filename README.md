@@ -3,3 +3,6 @@
 
 # 后续
 开发过程中发现还挺有意思，如果时间允许，考虑优化一下存储部分
+
+# ref  
+[Face recognition with Go](https://hackernoon.com/face-recognition-with-go-676a555b8a7e)
