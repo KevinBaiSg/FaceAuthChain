@@ -10,3 +10,15 @@
 
 # Output of the go coverage tool, specifically when used with LiteIDE
 *.out
+
+# goland
+.idea
+
+# govendor
+vendor
+
+#model files
+dlib-models
+
+#my test picture
+DB/kevin*
