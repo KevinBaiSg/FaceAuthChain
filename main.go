@@ -45,11 +45,13 @@ func Identify(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// save image for test
-	_, _ = SaveFace(ioutil.NopCloser(bytes.NewBuffer(buf)))
+	saveReader := ioutil.NopCloser(bytes.NewBuffer(buf))
+	defer saveReader.Close()
+	_, _ = SaveFace(saveReader)
 
 	recoginzeFace, err := rec.RecognizeSingle(buf)
 	if err != nil {
-		log.Println("Can't recognize: %v", err)
+		log.Printf("Can't recognize: %v\n", err )
 		_ = json.NewEncoder(w).Encode(Response{Status: "Data error\n"})
 		return
 	}
