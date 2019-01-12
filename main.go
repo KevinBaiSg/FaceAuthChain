@@ -24,8 +24,17 @@ var userNames []string
 var DBDirectory = "DB"
 var IdentifyFacesDirectory = "cache"
 
+const (
+	ROUTER_API_ENROLL   = "VeriLook/face/apiEnroll"
+	ROUTER_API_IDENTIFY = "VeriLook/face/apiIdentify"
+)
+
 // Identify create a new item
-func Identify(w http.ResponseWriter, r *http.Request) {
+func enroll(w http.ResponseWriter, r *http.Request) {
+}
+
+// Identify create a new item
+func identify(w http.ResponseWriter, r *http.Request) {
 	err := r.ParseForm()
 	if err != nil {
 		_ = json.NewEncoder(w).Encode(Response{Status: "Parse Form failed\n"})
@@ -39,7 +48,7 @@ func Identify(w http.ResponseWriter, r *http.Request) {
 	defer func() { _ = file.Close() }()
 
 	buf, err := ioutil.ReadAll(file)
-	if  err != nil {
+	if err != nil {
 		_ = json.NewEncoder(w).Encode(Response{Status: "Data error\n"})
 		return
 	}
@@ -51,7 +60,7 @@ func Identify(w http.ResponseWriter, r *http.Request) {
 
 	recoginzeFace, err := rec.RecognizeSingle(buf)
 	if err != nil {
-		log.Printf("Can't recognize: %v\n", err )
+		log.Printf("Can't recognize: %v\n", err)
 		_ = json.NewEncoder(w).Encode(Response{Status: "Data error\n"})
 		return
 	}
@@ -98,7 +107,7 @@ func InitRecognizerDB() []string {
 		}
 		samples = append(samples, faces[0].Descriptor)
 		cats = append(cats, int32(index))
-		index ++
+		index++
 		names = append(names, fileName[0:len(fileName)-len(ext)])
 	}
 	rec.SetSamples(samples, cats)
@@ -130,6 +139,7 @@ func main() {
 	userNames = InitRecognizerDB()
 
 	router := mux.NewRouter()
-	router.HandleFunc("/VeriLook/face/identify", Identify).Methods("POST")
+	router.HandleFunc(ROUTER_API_ENROLL, enroll).Methods("POST")
+	router.HandleFunc(ROUTER_API_IDENTIFY, identify).Methods("POST")
 	log.Fatal(http.ListenAndServe(":8080", router))
 }
