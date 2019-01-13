@@ -1,4 +1,4 @@
-# certisFaceRecognizerServer
+# FaceRecognizerServer
 初始版本由于对接服务属于内部网络，VPN 接入后也会有其他问题，所以模拟服务实现接口。  
 后期增加了真实的人脸识别功能，慢慢优化中。  
 
