@@ -8,23 +8,11 @@
 package routers
 
 import (
-	"my/FaceRecognizerServer/controllers"
-
 	"github.com/astaxie/beego"
+	"my/FaceRecognizerServer/controllers"
 )
 
 func init() {
-	ns := beego.NewNamespace("/v1",
-		beego.NSNamespace("/object",
-			beego.NSInclude(
-				&controllers.ObjectController{},
-			),
-		),
-		beego.NSNamespace("/user",
-			beego.NSInclude(
-				&controllers.UserController{},
-			),
-		),
-	)
-	beego.AddNamespace(ns)
+	beego.Router("/VeriLook/face/apiEnroll", &controllers.EnrollController{})
+	beego.Router("/VeriLook/face/apiIdentify", &controllers.IdentifyController{})
 }
