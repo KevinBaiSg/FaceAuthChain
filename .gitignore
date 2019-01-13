@@ -17,9 +17,6 @@
 # govendor
 vendor
 
-#model files
-dlib-models
-
 #my test picture
 DB/kevin*
 
