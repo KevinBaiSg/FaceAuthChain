@@ -21,7 +21,7 @@
 人脸识别时可能并不会有用户信息共享的场景。
 
 # 整体模型  
-![image](https://raw.githubusercontent.com/KevinBaiSg/FaceAuthChain/master/images/FaceAuth.jpg)
+![image](https://raw.githubusercontent.com/KevinBaiSg/FaceAuthChain/master/images/FaceAuth.png)
 
 
 ### 大体想法
