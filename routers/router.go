@@ -13,6 +13,6 @@ import (
 )
 
 func init() {
-	beego.Router("/VeriLook/face/apiEnroll", &controllers.EnrollController{})
-	beego.Router("/VeriLook/face/apiIdentify", &controllers.IdentifyController{})
+	beego.Router("/v1/enroll", &controllers.EnrollController{})
+	beego.Router("/v1/identify", &controllers.IdentifyController{})
 }

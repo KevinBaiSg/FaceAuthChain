@@ -17,8 +17,11 @@
 
 # 后续  
 由于这几年本身的工作一直在 hyperledger fabric 上，今天大体考虑可以在这方面做点事情。
-由于本人在人脸识别行业上没有实质的工作体验，对市场了解也不是很清楚。比如大部分商户在使用
+由于本人在人脸识别行业上没有实质的工作经验，对市场了解也不是很清楚。比如大部分商户在使用
 人脸识别时可能并不会有用户信息共享的场景。
+
+# 整体模型  
+![image](http://github.com/KevinBaiSg/FaceAuthChain/raw/master/images/FaceAuth.jpg)
 
 ### 大体想法
 ```
@@ -29,6 +32,7 @@
 5.可以利用 MSP 的特性，配置注册脸部数据时多个节点背书
 ```
 # ref  
-
 [Face recognition with Go](https://hackernoon.com/face-recognition-with-go-676a555b8a7e)  
 [dlib Machine Learning Guide](http://dlib.net/ml_guide.svg)  
+
+Descriptor -> [gob](https://golang.org/pkg/encoding/gob/#pkg-examples)序列化
