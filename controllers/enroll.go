@@ -1,8 +1,8 @@
 package controllers
 
 import (
-	"encoding/json"
-	"my/FaceRecognizerServer/models"
+	//"encoding/json"
+	//"my/FaceRecognizerServer/models"
 
 	"github.com/astaxie/beego"
 )
@@ -19,9 +19,9 @@ type EnrollController struct {
 // @Failure 403 body is empty
 // @router / [post]
 func (e *EnrollController) Post() {
-	var ob models.Object
-	json.Unmarshal(e.Ctx.Input.RequestBody, &ob)
-	objectid := models.AddOne(ob)
-	e.Data["json"] = map[string]string{"ObjectId": objectid}
-	e.ServeJSON()
+	//var ob models.Object
+	//json.Unmarshal(e.Ctx.Input.RequestBody, &ob)
+	//objectid := models.AddOne(ob)
+	//e.Data["json"] = map[string]string{"ObjectId": objectid}
+	//e.ServeJSON()
 }

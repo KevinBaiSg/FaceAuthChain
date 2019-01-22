@@ -1,8 +1,8 @@
 package controllers
 
 import (
-	"encoding/json"
-	"my/FaceRecognizerServer/models"
+	//"encoding/json"
+	//"my/FaceRecognizerServer/models"
 
 	"github.com/astaxie/beego"
 )
@@ -19,9 +19,9 @@ type IdentifyController struct {
 // @Failure 403 body is empty
 // @router / [post]
 func (i *IdentifyController) Post() {
-	var ob models.Object
-	json.Unmarshal(i.Ctx.Input.RequestBody, &ob)
-	objectid := models.AddOne(ob)
-	i.Data["json"] = map[string]string{"ObjectId": objectid}
-	i.ServeJSON()
+	//var ob models.Object
+	//json.Unmarshal(i.Ctx.Input.RequestBody, &ob)
+	//objectid := models.AddOne(ob)
+	//i.Data["json"] = map[string]string{"ObjectId": objectid}
+	//i.ServeJSON()
 }
