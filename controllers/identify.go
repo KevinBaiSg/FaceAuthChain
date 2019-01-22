@@ -2,7 +2,7 @@ package controllers
 
 import (
 	//"encoding/json"
-	//"my/FaceRecognizerServer/models"
+	//"my/FaceAuthChain/models"
 
 	"github.com/astaxie/beego"
 )

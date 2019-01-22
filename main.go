@@ -1,7 +1,7 @@
 package main
 
 import (
-	_ "my/FaceRecognizerServer/routers"
+	_ "my/FaceAuthChain/routers"
 
 	"github.com/astaxie/beego"
 )

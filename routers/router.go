@@ -9,7 +9,7 @@ package routers
 
 import (
 	"github.com/astaxie/beego"
-	"my/FaceRecognizerServer/controllers"
+	"my/FaceAuthChain/controllers"
 )
 
 func init() {
