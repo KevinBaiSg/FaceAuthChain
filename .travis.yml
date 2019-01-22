@@ -1,0 +1,12 @@
+language:
+  - go
+sudo: false
+dist: trusty
+go:
+  - 1.9.2
+#services:
+#  - couchdb
+before_script:
+#  - curl -X PUT localhost:5984/faceauthchain
+before_install:
+  - go get -v
