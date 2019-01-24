@@ -2,6 +2,7 @@ package db
 
 type db interface {
 	Init() error
-	set(key string, value []byte) error
-	get(key string) ([]byte, error)
+	enroll(descriptor []byte) (id string, err error)
+	enrollBy(id string, descriptor []byte) error
+	query(id string) (descriptor []byte, err error)
 }

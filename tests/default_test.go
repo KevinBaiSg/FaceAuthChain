@@ -6,7 +6,7 @@ import (
 	"testing"
 	"runtime"
 	"path/filepath"
-	_ "my/FaceRecognizerServer/routers"
+	_ "my/FaceAuthChain/controllers"
 
 	"github.com/astaxie/beego"
 	. "github.com/smartystreets/goconvey/convey"
