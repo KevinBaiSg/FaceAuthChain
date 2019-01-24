@@ -23,6 +23,8 @@
 # 整体模型  
 ![image](https://raw.githubusercontent.com/KevinBaiSg/FaceAuthChain/master/images/FaceAuth.png)
 
+# 1-N 匹配的查找设计模型  
+![image](https://raw.githubusercontent.com/KevinBaiSg/FaceAuthChain/master/images/concurrency.png)  
 
 ### 大体想法
 ```
