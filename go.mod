@@ -10,6 +10,6 @@ require (
 	github.com/sirupsen/logrus v0.0.0-20190122192820-7d8d63893b99
 	github.com/smartystreets/assertions v0.0.0-20180927180507-b2de0cb4f26d
 	github.com/smartystreets/goconvey v0.0.0-20181108003508-044398e4856c
-	golang.org/x/crypto v0.0.0-20180802221240-56440b844dfe
+	golang.org/x/crypto v0.0.0-20181127143415-eb0de9b17e85
 	golang.org/x/sys v0.0.0-20190123074212-c6b37f3e9285
 )
