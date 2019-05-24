@@ -1,7 +1,7 @@
 package main
 
 import (
-	_ "my/FaceAuthChain/routers"
+	_ "github.com/KevinBaiSg/FaceAuthChain/routers"
 
 	"github.com/astaxie/beego"
 )
